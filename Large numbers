@@ -1,0 +1,35 @@
+import random
+from random import randint
+from datetime import datetime
+import time 
+
+
+# Частина 1: Довжина ключа 
+
+for i in range(3 , 13):
+ print (2**i, end="-bit sequence:\n")
+ print (2 **(2**i))
+ print ("\n")
+
+
+# Part 2. Випадковий ключ
+
+a = int(input())  # Введіть бажану довжину ключа 
+random_key = hex(randint(16**(a-1), 16**a))
+print("\n")
+print("Випадковий ключ:", end=" ")
+print (random_key) # Вивід випадкового ключа введеної довжини 
+print ("----------")
+
+
+# Part 3. Розрахунок часу виконання 
+
+start_time = datetime.now()
+for j in range (16**(a - 1), 16**a):
+    if hex(j) == random_key:
+        print ("Час пошуку ключа", end=" ")
+        print (random_key, end="")
+        print (":", end=" ")
+        print ((datetime.now() - start_time).microseconds/1000) # вивід часу, витраченогона пошук ключа 
+        print("\n")
+        break
