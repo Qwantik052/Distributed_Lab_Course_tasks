@@ -30,6 +30,6 @@ for j in range (16**(a - 1), 16**a):
         print ("Час пошуку ключа", end=" ")
         print (random_key, end="")
         print (":", end=" ")
-        print ((datetime.now() - start_time).microseconds/1000) # вивід часу, витраченогона пошук ключа 
+        print ((datetime.now() - start_time).microseconds/1000) # вивід часу, витраченого на пошук ключа 
         print("\n")
         break
