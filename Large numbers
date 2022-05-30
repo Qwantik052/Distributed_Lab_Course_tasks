@@ -26,7 +26,6 @@ for k in range (0 , 17 + len(random_key3)):
     print ("-", end="")
 
 print("\n")
-# print (len(random_key3))
 # Part 3. Розрахунок часу виконання 
 
 start_time = datetime.now()
