@@ -15,21 +15,22 @@ for i in range(3 , 13):
 # Part 2. Випадковий ключ
 
 a = int(input())  # Введіть бажану довжину ключа 
-random_key1 = hex(randint(16**(a-1), 16**a)) # створюємо ключ бажаної довжини, але через специфіку роботи метода hex генерований ключ не буде включати випадки, коли його запис починається з 0
+random_key1 = hex(randint(2**(a-1), 2**a)) # створюємо ключ бажаної довжини (8 біт, 16 біт, ... , 4096 біт ), але через специфіку роботи метода hex генерований ключ не буде включати випадки, коли його запис починається з 0
 random_key = random_key1[3:] # відкидаємо перші 3 елементи, залишаємо усе інше (суфікс)
 random_key2 = hex(randint(0 ,15)) ; # генеруємо ключ довжини 1, наприклад (0Ха) (префікс)
 random_key3 = random_key2 + random_key # з'єднуємо дві частини ключа (префікс та суфікс)
 print("\n")
 print("Випадковий ключ:", end=" ")
-print (random_key3) # Вивід випадкового ключа бажаної довжини 
-for k in range (0 , 17 + len(random_key3)):
+print (random_key3) # Вивід випадкового ключа введеної довжини 
+for k in range (0 , 17 + len(random_key3)): 
     print ("-", end="")
-print ("\n")
 
+print("\n")
+# print (len(random_key3))
 # Part 3. Розрахунок часу виконання 
 
 start_time = datetime.now()
-for j in range (16**(a - 1), 16**a):
+for j in range (2**(a - 1), 2**a):
     if hex(j) == random_key3:
         print ("Час пошуку ключа", end=" ")
         print (random_key3, end="")
