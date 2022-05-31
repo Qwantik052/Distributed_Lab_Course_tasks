@@ -1,1 +1,21 @@
 # HEX-INT
+
+import string 
+from random import randint
+import numbers
+import decimal
+
+a = input()
+big_endian = int(a , 16)
+print (big_endian)
+print ("\n")
+def to_little(val):
+     little_hex = bytearray.fromhex(val)
+     little_hex.reverse()
+     str_little = ''.join(format(x, '02x') for x in little_hex)
+
+     return str_little
+
+
+print (to_little(a))
+print ("\n")
